@@ -34,7 +34,16 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
+  'GET /login': {
+    view: 'pages/entrance/login-page'
+  },
+  'GET /signup': {
+    view: 'pages/entrance/signup-page'
+  },
+  'GET /Dashboard': {
+    view: 'pages/dashboard/Dashboard'
+  },
 
   /***************************************************************************
   *                                                                          *
@@ -45,5 +54,12 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
+  'POST /create' : 'AuthController.CreateUser',
+  'POST /login' : 'AuthController.process',
+  'GET /google' : 'AuthController.google',
+  'GET /googleCallback' : 'AuthController.googleCallback',
+  'GET /facebook' : 'AuthController.facebook',
+  'GET /facebookCallback' : 'AuthController.facebookCallback',
+  'POST /createProfile/:id' : 'ProfileController.createProfile',
 
 };

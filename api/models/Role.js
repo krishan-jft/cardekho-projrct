@@ -5,12 +5,13 @@ module.exports = {
       required : true,
       unique : true,
     },
-    user : {
+    users : {
       collection : 'user',
-      via : 'role',
+      via : 'roles',
     },
     state : {
-      type: 'string',
+      type: 'boolean',
+      defaultsTo : false,
     },
   },
 };

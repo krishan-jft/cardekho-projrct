@@ -11,7 +11,18 @@
 
 module.exports.bootstrap = function(cb) {
 
+
+  var users = [ {email : 'admin@gmail.com',password:'password'},{ email:'test@gmail.com',password:'password'}];
+  var roles = [{ authority: 'ROLE_ADMIN'},{ authority: 'ROLE_USER'}]
+
+
+  User.findOrCreate(users).exec(function(err,users) {
+    Role.findOrCreate(roles).exec(function(err,roles) {
+      cb();
+    });
+  })
+
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
-  cb();
+
 };

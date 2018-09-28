@@ -5,8 +5,6 @@ module.exports = {
   attributes : {
     id: {
       type: 'string',
-      autoIncrement : true,
-      required: true,
       primaryKey: true,
       defaultsTo: function () {
         return uuid.v4();
@@ -19,17 +17,15 @@ module.exports = {
     },
     password: {
       type: 'string',
-      required: true,
-      minLength: 4,
-      maxLength: 12,
+
     },
     ProfileId: {
       model: 'profile',
-      unique: true,
+      //unique: true,
     },
-    role : {
+    roles : {
       collection : 'role',
-      via: 'user',
+      via: 'users',
     },
     productdetails :{
       collection: 'productdetails',
@@ -44,7 +40,14 @@ module.exports = {
      type:'string',
     },
     state : {
-      type : 'string',
+      type : 'boolean',
+      defaultsTo : false,
+    },
+    facebookID: {
+      type: 'string'
+    },
+    googleID: {
+      type: 'string'
     },
   },
     autoPK : false,

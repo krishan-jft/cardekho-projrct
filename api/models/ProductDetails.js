@@ -40,6 +40,9 @@ module.exports = {
     user : {
       model : 'user',
     },
+    state : {
+      type : 'boolean',
+    },
 
   }
 };

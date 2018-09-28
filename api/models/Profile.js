@@ -32,6 +32,7 @@ module.exports = {
     },
     state : {
      type : 'boolean',
+      defaultsTo : false,
     },
     adminState : {
      type : 'string',
